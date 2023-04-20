@@ -4,7 +4,7 @@ import os
 import urllib.request
 from requests.compat import urljoin
 
-chasers_url = 'https://chasersjuice.com/'
+chasers_url = 'https://chasersjuice.com/about-us/'
 response = requests.get(chasers_url)
 soup = BeautifulSoup(response.text, 'html.parser')
 img_tags = soup.find_all('img')
