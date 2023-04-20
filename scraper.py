@@ -4,11 +4,11 @@ import os
 import urllib.request
 from requests.compat import urljoin
 
-chasers_url = 'https://chasersjuice.com/about-us/'
+chasers_url = 'https://chasersjuice.com/chasers-juice-products'
 response = requests.get(chasers_url)
 soup = BeautifulSoup(response.text, 'html.parser')
 img_tags = soup.find_all('img')
-div_tags = soup.find_all('div', {'style': 'background-image: url('})
+div_tags = soup.find_all('div', {'url'})
 urls = [urljoin(chasers_url, img['src']) for img in img_tags]
 urls += [urljoin(chasers_url, div['style'][23:-3]) for div in div_tags]
 
