@@ -16,14 +16,12 @@ urls += [urljoin(chasers_url, div['style'][23:-3]) for div in div_tags]
 urls = list(set(urls))
 
 file = open("links.txt", "w")
-
 for url in urls:
     try:
         print(url)
         file.write(url + '\n')
     except:
         print('failed to write url')
-
 file.close()
 
 for i, url in enumerate(urls):
